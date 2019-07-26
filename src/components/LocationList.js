@@ -21,7 +21,7 @@ export default function LocationList() {
     },[])
 
     return (
-        <div>Location List
+        <div>
             {location.map((data,i) => (
                 <LocationCard data={data} key={i} />
             ))
