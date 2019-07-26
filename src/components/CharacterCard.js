@@ -30,7 +30,7 @@ export default function CharacterCard (props) {
       <p>{eachCharacter.type}</p>
       <p>Location: <LocationCard data={eachCharacter.location} /> </p>
       <p>Origin: </p>
-      <p>Episode: <LocationCard data={eachCharacter.episode} /> </p>
+      {/* <p>Episode: <EpisodeCard data={eachCharacter.episode} /> </p> */}
     </div>
   </span>
   )
