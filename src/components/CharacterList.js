@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import {Link} from 'react-router-dom'
-
+import CharacterCard from "./CharacterCard"
 
 
 
@@ -29,7 +28,7 @@ export default function CharacterList() {
       <h2>TODO: `array.map()` over your state here!
         {character.map((data,i) =>(
           // console.log('data', data)
-          <Link to ={`/character/${data.id}`} key={i}/>
+          <CharacterCard data ={data} key={i}/>
           
         ))}
       </h2>
