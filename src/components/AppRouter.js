@@ -8,10 +8,10 @@ import EpisodeList from './EpisodeList'
 export default function AppRouter() {
   return <div className="page-view ui bottom attached segment active tab">
     <Switch>
-      <Route path='/characters' component={CharacterList} />
-      <Route path='/locations' component={LocationList} />
-      <Route path='/' component={WelcomePage} />
-      <Route path="/episodes" component={EpisodeList} />
+      <Route exact path='/characters' component={CharacterList} />
+      <Route exact path='/locations' component={LocationList} />
+      <Route exact path='/' component={WelcomePage} />
+      <Route exact path="/episodes" component={EpisodeList} />
     </Switch>
   </div>
 
