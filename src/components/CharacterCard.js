@@ -14,7 +14,7 @@ export default function CharacterCard (props) {
     Axios
         .get(`https://rickandmortyapi.com/api/character/${id}`)
         .then(response =>{
-          // console.log('response in CharacterCard', response)
+          console.log('response in CharacterCard', response)
           setEachCharacter(response.data)
         })
         .catch(err => {
@@ -28,7 +28,7 @@ export default function CharacterCard (props) {
       <img src={eachCharacter.image} alt="Image"></img>
       <h2>{eachCharacter.name}</h2>
       <p>{eachCharacter.type}</p>
-      <p>Location: <LocationCard data={eachCharacter.location} /> </p>
+      {/* <p>Location: <LocationCard /> </p> */}
       <p>Origin: </p>
       {/* <p>Episode: <EpisodeCard data={eachCharacter.episode} /> </p> */}
     </div>
