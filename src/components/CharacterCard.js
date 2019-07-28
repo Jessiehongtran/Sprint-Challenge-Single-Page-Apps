@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import LocationCard from "./LocationCard"
 import EpisodeCard from "./EpisodeCard"
+import {Card, Image, Name, Info} from "./Style"
 
 export default function CharacterCard (props) {
   console.log('props in CharacterCard', props.data)
@@ -23,15 +24,15 @@ export default function CharacterCard (props) {
   },[props.data.id]);
 
   return (
-  <span>
-    <div>
-      <img src={eachCharacter.image} alt="Image"></img>
-      <h2>{eachCharacter.name}</h2>
-      <p>{eachCharacter.type}</p>
+  <Card>
+    <span>
+      <Image src={eachCharacter.image} alt="Image"></Image>
+      <Name>{eachCharacter.name}</Name>
+      <Info>{eachCharacter.type}</Info>
       {/* <p>Location: <LocationCard /> </p> */}
-      <p>Origin: </p>
+      <Info>Origin: </Info>
       {/* <p>Episode: <EpisodeCard data={eachCharacter.episode} /> </p> */}
-    </div>
-  </span>
+    </span>
+  </ Card>
   )
 }
