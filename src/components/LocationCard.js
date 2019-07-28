@@ -1,5 +1,4 @@
 import React from 'react'
-import Axios from 'axios';
 import { Card } from 'semantic-ui-react'
 
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import Axios from 'axios';
 import LocationCard from "./LocationCard"
 import EpisodeCard from "./EpisodeCard"
 import {Card, Image, Icon} from "semantic-ui-react"

@@ -10,7 +10,7 @@ export default function EpisodeList() {
     Axios
         .get(`https://rickandmortyapi.com/api/episode/`)
         .then(response => {
-          console.log('response in EpisodeList', response.data)
+          console.log('response in EpisodeList', response.data.results)
           setEpisode(response.data.results)
         })
         .catch(err=>{
@@ -22,9 +22,9 @@ export default function EpisodeList() {
   return <section>
 
       <h2>Episode List
-        {/* {episode.map((data,i)=>(
-            <EpisodeCard data ={data} key={i} />
-        ))} */}
+        {episode.map((episodes,n)=>(
+            <EpisodeCard data ={episodes} key={n} />
+        ))} 
       </h2>
     </section>
 
