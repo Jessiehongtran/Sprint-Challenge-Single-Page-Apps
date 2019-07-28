@@ -4,6 +4,7 @@ import LocationCard from "./LocationCard"
 import EpisodeCard from "./EpisodeCard"
 import {Card, Image, Icon} from "semantic-ui-react"
 
+
 export default function CharacterCard (props) {
   console.log('props in CharacterCard', props.data)
   const [eachCharacter, setEachCharacter] = useState({});
@@ -24,6 +25,7 @@ export default function CharacterCard (props) {
   },[props.data.id]);
 
   return (
+    <Card.Group itemsPerRow={2}>
     <Card>
       <Image src={eachCharacter.image} alt="Image"></Image>
       <Card.Content>
@@ -34,11 +36,12 @@ export default function CharacterCard (props) {
         {/* <p>Episode: <EpisodeCard data={eachCharacter.episode} /> </p> */}
       </Card.Content>
       <Card.Content extra>
-      <a>
-        <Icon name="user"/>
-        Episodes
-      </a>
-    </Card.Content>
+        <a>
+          <Icon name="user"/>
+          Episodes
+        </a>
+      </Card.Content>
     </Card>
+    </Card.Group>
   )
 }

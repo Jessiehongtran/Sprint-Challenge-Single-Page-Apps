@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
+import { Card } from 'semantic-ui-react'
+
 
 export default function LocationCard (props) {
   console.log('props in Location List', props.data)
@@ -23,11 +25,12 @@ export default function LocationCard (props) {
 
 
   return (
-  <span>
-    <p>{eachLocation.name}</p>
-    <p>{eachLocation.type}</p>
-    <p>{eachLocation.dimension}</p>
-    <p>{eachLocation.resident}</p>
-  </span>
+  <Card>
+      <Card.Content>
+        <Card.Header>{eachLocation.name}</Card.Header>
+        <Card.Description>{eachLocation.type} - {eachLocation.dimension}</Card.Description>
+        {/* <p>{eachLocation.resident}</p> */}
+      </Card.Content>
+  </Card>
   )
 }
