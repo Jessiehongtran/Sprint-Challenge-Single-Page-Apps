@@ -1,11 +1,16 @@
 import React from 'react'
+import { Card } from 'semantic-ui-react'
 
-export default function EpisodeCard (data) {
-  console.log('props in EpisodeCard', data)
+export default function EpisodeCard (props) {
+  console.log('props in EpisodeCard', props.data)
   
 
   return (
-  <span>
-  </span>
+  <Card>
+      <Card.Content>
+        <Card.Header>{props.data.episode} - {props.data.name}</Card.Header>
+        <Card.Description>{props.data.air_date} </Card.Description>
+      </Card.Content>
+  </Card>
   )
 }

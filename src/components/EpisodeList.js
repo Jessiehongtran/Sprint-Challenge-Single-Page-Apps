@@ -20,12 +20,9 @@ export default function EpisodeList() {
   }, [])
 
   return <section>
-
-      <h2>Episode List
         {episode.map((episodes,n)=>(
             <EpisodeCard data ={episodes} key={n} />
         ))} 
-      </h2>
     </section>
 
 }
