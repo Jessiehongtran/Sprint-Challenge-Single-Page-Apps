@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import CharacterCard from "./CharacterCard"
-import {EachCard} from "./Style"
+
 
 
 export default function CharacterList() {
@@ -22,13 +22,13 @@ export default function CharacterList() {
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, [])
 
-  return <EachCard className='character-list grid-view'>
+  return <section className='character-list grid-view'>
 
         {character.map((data,i) =>(
           // console.log('data', data)
           <CharacterCard data ={data} key={i}/>
           
         ))}
-    </EachCard>
+    </section>
 
 }

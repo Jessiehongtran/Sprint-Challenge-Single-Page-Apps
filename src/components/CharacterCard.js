@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
 import LocationCard from "./LocationCard"
 import EpisodeCard from "./EpisodeCard"
-import {Card, Image, Name, Info} from "./Style"
+import {Card, Image, Icon} from "semantic-ui-react"
 
 export default function CharacterCard (props) {
   console.log('props in CharacterCard', props.data)
@@ -24,15 +24,21 @@ export default function CharacterCard (props) {
   },[props.data.id]);
 
   return (
-  <Card>
-    <span>
+    <Card>
       <Image src={eachCharacter.image} alt="Image"></Image>
-      <Name>{eachCharacter.name}</Name>
-      <Info>{eachCharacter.type}</Info>
-      {/* <p>Location: <LocationCard /> </p> */}
-      <Info>Origin: </Info>
-      {/* <p>Episode: <EpisodeCard data={eachCharacter.episode} /> </p> */}
-    </span>
-  </ Card>
+      <Card.Content>
+        <Card.Header>{eachCharacter.name}</Card.Header>
+        <Card.Meta>{eachCharacter.species} {eachCharacter.status}</Card.Meta>
+        {/* <p>Location: <LocationCard /> </p> */}
+        <Card.Description>Origin: </Card.Description>
+        {/* <p>Episode: <EpisodeCard data={eachCharacter.episode} /> </p> */}
+      </Card.Content>
+      <Card.Content extra>
+      <a>
+        <Icon name="user"/>
+        Episodes
+      </a>
+    </Card.Content>
+    </Card>
   )
 }
